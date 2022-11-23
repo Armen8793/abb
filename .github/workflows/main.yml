@@ -18,7 +18,7 @@ jobs:
     - name: Install Node.js
       uses: actions/steup-node@v1
       with:
-        node-version: ["14.x, 15.x, 16.x"]
+        node-version: 14.x
         
     - name: Install npm packages
       run: npm ci
