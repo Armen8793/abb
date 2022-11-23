@@ -3,7 +3,7 @@ name: Build and deploy website
 on:
   push:
     branches:
-      - master #on push to the master branch do the jobs below
+      - master
 
 jobs:
   build-and-deploy:
