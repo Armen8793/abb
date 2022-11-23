@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js for ABB demo task by Armen Petrosyan</code> and save to reload.
+          <code>REACT JS app for ABB demo task by Armen Petrosyan</code>
         </p>
         <a
           className="App-link"
