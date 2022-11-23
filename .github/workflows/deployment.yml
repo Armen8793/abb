@@ -26,7 +26,7 @@ jobs:
           az storage blob upload-batch --account-name abbdemotaskstorage --auth-mode key -d '$web' -s .
 .
   # Azure logout
-    - name: logout
-      run: |
-            az logout
-      if: always()
+   - name: logout
+     run: |
+       az logout
+     if: always()
