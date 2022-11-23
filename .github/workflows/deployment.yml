@@ -14,7 +14,7 @@ jobs:
     
     steps:
     - name: Download artifact
-      uses: actions./download-artifact@v3
+      uses: actions/download-artifact@v2
       with:
         workflow: main.yml
         workflow_conclusion: success
