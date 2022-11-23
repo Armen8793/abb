@@ -2,7 +2,7 @@ name: Deploy site
 
 on:
   workflow_run:
-    workflows: ["Build react website"]
+    workflows: ["Build my react website"]
     branches: [main]
     types: [completed]
 
