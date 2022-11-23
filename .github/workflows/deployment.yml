@@ -2,7 +2,7 @@ name: Deploy site
 
 on:
   workflow_run:
-    workflows: ["Build site"]
+    workflows: ["Build demo site"]
     branches: [main]
     types: [completed]
 
