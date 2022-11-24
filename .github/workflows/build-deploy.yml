@@ -12,32 +12,33 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: checkout code
-      - uses: actions/checkout@v2
+    - name: checkout code
+    - uses: actions/checkout@v2
 
-      - name: Set up Node.js version
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
+    - name: Set up Node.js version
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
 
-      - name: npm install and build
-        run: |
-          npm install
-          npm run build
+    - name: npm install and build
+      run: |
+        npm install
+        npm run build
           
-      - name: Azure login
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-       - name: Upload to Azure blob storage
-         uses: azure/CLI@v1
-         with:
-           azcliversion: 2.0.72
-           inlineScript: |
-             az storage blob upload-batch --account-name abbdemotaskstorage -d '$web' -s build/ready-files
+    - name: Azure login
+      uses: azure/login@v1
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        
+    - name: Upload to Azure blob storage
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.0.72
+        inlineScript: |
+           az storage blob upload-batch --account-name abbdemotaskstorage -d '$web' -s build/ready-files
     
-       - name: Azure logout
-         run: |
-            az logout
+    - name: Azure logout
+      run: |
+          az logout
