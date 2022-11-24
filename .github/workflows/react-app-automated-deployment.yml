@@ -1,4 +1,4 @@
-name: ABB Task Automation CI
+name: ABB Task Automation 
 
 on:
     push:
