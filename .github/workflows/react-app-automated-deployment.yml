@@ -27,12 +27,17 @@ jobs:
     - uses: azure/login@v1
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: 'Run az commands'
+      run: |
+        az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+  
     - name: Upload to the storage account
       uses: azure/CLI@v1
       with:
         azcliversion: 2.0.72
         inlineScript: |
-            az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+            az storage blob upload-batch --source ./build --destination '$web' --account-name ${{ env.STORAGE_ACCOUNT }}   
+            
             
     - name: Azure logout
       run: |
