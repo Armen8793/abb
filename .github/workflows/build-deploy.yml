@@ -23,7 +23,7 @@ jobs:
           npm run build
           
       - name: Upload To Azure Blob Storage
-        uses: bacongobbler/azure-blob-storage-upload@v1.0.0
+        uses: armen/azure-blob-storage-upload@v1.0.0
         with:
           source_dir: public 
           container_name: $web
