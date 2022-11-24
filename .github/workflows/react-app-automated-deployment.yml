@@ -34,9 +34,9 @@ jobs:
     - name: Upload to the storage account
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.29.2
+        azcliversion: 2.0.72
         inlineScript: |
-            az storage blob upload-batch --account-name ${{ env.STORAGE_ACCOUNT }} --auth-mode key -d '$web' -s dist/   
+            az storage blob upload-batch --source ./build --destination '$web' --account-name ${{ env.STORAGE_ACCOUNT }}   
             
             
     - name: Azure logout
