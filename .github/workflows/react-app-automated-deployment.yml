@@ -27,11 +27,12 @@ jobs:
     - uses: azure/login@v1
       with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - name: 'Run az commands'
+          
+    - name: Set my Azur subscription
       run: |
         az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
   
-    - name: Upload to the storage account
+    - name: Upload source code to my blob storage
       uses: azure/CLI@v1
       with:
         azcliversion: latest
