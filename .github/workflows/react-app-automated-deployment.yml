@@ -36,7 +36,7 @@ jobs:
       with:
         azcliversion: 2.0.81
         inlineScript: |
-            az storage blob upload-batch --source ./build --destination '$web' --account-name ${{ env.STORAGE_ACCOUNT }}   
+            az storage blob upload-batch --source ./ --destination '$web' --account-name ${{ env.STORAGE_ACCOUNT }}   
             
             
     - name: Azure logout
