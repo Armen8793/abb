@@ -9,6 +9,7 @@ on:
 env:
   NODE_VERSION: '16.x'
   STORAGE_ACCOUNT: 'abbdemotaskstorage'
+  
 
 jobs:
   build-and-deploy:
